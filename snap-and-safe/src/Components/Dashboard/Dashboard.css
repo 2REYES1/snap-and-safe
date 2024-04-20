@@ -1,0 +1,54 @@
+.dash {
+    background-color: #D2FAFF;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.logo {
+    color: #084D8D;
+    font-family: serif;
+    font-size: 16vh;
+    font-weight: bold;
+    padding-top: 5vh;
+}
+
+.dashButtons {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+#clickPills {
+    margin-top: 15vh;
+    margin-bottom: 1vh;
+    width: 33vw;
+    height: 15vh;
+    border-radius: 40px;
+    border-style: hidden;
+    background-color: #397175;
+    color: white;
+    font-family: serif;
+    font-size: 6vh;
+    margin-left: 34vw;
+}
+
+#clickPills:hover {
+    background-color: #084D8D;
+}
+
+#clickFood {
+    margin-top: 5vh;
+    width: 33vw;
+    height: 15vh;
+    border-radius: 40px;
+    border-style: hidden;
+    background-color: #397175;
+    color: white;
+    font-family: serif;
+    font-size: 6vh;
+    margin-left: 34vw;
+}
+
+#clickFood:hover {
+    background-color: #084D8D;
+}
