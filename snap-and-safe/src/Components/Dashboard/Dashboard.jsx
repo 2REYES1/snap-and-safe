@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router';
 export default function Dashboard() {
     const navigate = useNavigate();
     function onClickPills() {
-        navigate('/checkPills');
+        navigate('/pillCheck');
     }
     function onClickFood() {
-        navigate('/checkFood');
+        navigate('/foodCheck');
     }
     return (
         <div className={"dash"}>
