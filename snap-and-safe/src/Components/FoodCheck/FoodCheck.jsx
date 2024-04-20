@@ -29,6 +29,7 @@ export default function FoodCheck() {
     };
 
     const handleSubmit = (e) => {
+        setLoading(true);
         e.preventDefault();
         console.log(selectedFile);
         if(selectedFile) {
@@ -92,25 +93,32 @@ async function run() {
             </div>
             <div className={"box-center"}>
                 <div className={"upload-box box-center"}>
-                    <p id={"text"}>upload an image of a food label.</p>
-                    <form className={"box-center"} onSubmit={handleSubmit}>
-                        <input
-                            type="file"
-                            ref={fileInputRef}
-                            style={{ display: 'none' }}
-                            onChange={handleFileChange}
-                        />
-                        <button className={"select-file-button"} type="button" onClick={handleButtonClick}>
-                            Select a File
-                        </button>
-                        <button className={"upload-button"} type="submit">Upload</button>
-                    </form>
-                    {selectedFile && (
-                    <div>
-                        <h3>This is your selected image.</h3>
-                        <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
-                    </div>
-                    )}
+                    {
+                        loading?
+                         <div className={"loader"}></div>
+                        : 
+                        <div>
+                            <p id={"text"}>upload an image of a food label.</p>
+                            <form className={"box-center"} onSubmit={handleSubmit}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef}
+                                    style={{ display: 'none' }}
+                                    onChange={handleFileChange}
+                                />
+                                <button className={"select-file-button"} type="button" onClick={handleButtonClick}>
+                                    Select a File
+                                </button>
+                                <button className={"upload-button"} type="submit">Upload</button>
+                            </form>
+                            {selectedFile && (
+                            <div>
+                                <h3>This is your selected image.</h3>
+                                <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
+                            </div>
+                            )}
+                        </div>
+                    }
                 </div>
             </div>
         </div>
