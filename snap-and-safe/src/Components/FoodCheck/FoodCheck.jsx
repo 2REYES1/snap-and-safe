@@ -1,9 +1,14 @@
 import './FoodCheck.css';
 import * as React from 'react';
 import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router';
 
 export default function FoodCheck() {
+    const navigate = useNavigate();
 
+    function onClickPrev() {
+        navigate('/');
+    }
     const [selectedFile, setSelectedFile] = useState(null);
     const fileInputRef = useRef(null);
 
@@ -23,7 +28,7 @@ export default function FoodCheck() {
     return (
         <div class = "main-layout">
             <div class = "header-layout">
-                <button class = "prev-button">
+                <button class = "prev-button" onClick={onClickPrev}>
                     Prev
                 </button>
             </div>
