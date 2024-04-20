@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
 
-export default function PillSuccess() {
+export default function PillSuccess(props) {
     const navigate = useNavigate();
 
     function onClickPrev() {
@@ -23,7 +23,7 @@ export default function PillSuccess() {
             <div className={"box-center"}>
                 <div className={"upload-box box-center"}>
                     <p>Image successfully uploaded.</p>
-                    <p>This Pill is blah blah blah.</p>
+                    <p style={{fontSize: "2vh"}}>{props.response}</p>
                     <p>Is there anything else about this pill you would like to know?</p>
                     <form className={"box-center"}>
                         <input
