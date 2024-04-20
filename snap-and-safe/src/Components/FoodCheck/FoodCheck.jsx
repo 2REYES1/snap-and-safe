@@ -4,7 +4,7 @@ import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
 // import model from '../../Gemini/Gemini';
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
-
+import FoodSuccess from '../FoodSuccess/FoodSuccess';
 
 export default function FoodCheck() {
     const navigate = useNavigate();
@@ -15,6 +15,8 @@ export default function FoodCheck() {
     }
 
     const [selectedFile, setSelectedFile] = useState(null);
+    const [geminiResponse, setGeminiResponse] = useState("");
+    const [loading, setLoading] = useState(false);
     const fileInputRef = useRef(null);
 
     const handleFileChange = (e) => {
@@ -30,9 +32,7 @@ export default function FoodCheck() {
         e.preventDefault();
         console.log(selectedFile);
         if(selectedFile) {
-            console.log("RUNNING RUN")
             run();
-            console.log("DONE WITH RUN")
         }
     };
 
@@ -73,14 +73,17 @@ async function run() {
   const response = await result.response;
   const text = response.text();
   const cleanedText = text.replace(/```json/g, '').replace(/```/g, '');
+  setGeminiResponse(text);
   console.log(text);
   console.log("JSON OBJECT UNDER THIS.");
   console.log(JSON.parse(cleanedText));
+  setLoading(false);
 }
 
     
 
     return (
+        (geminiResponse? <div>{<FoodSuccess response={geminiResponse}/>}</div> :
         <div className={"main-layout"}>
             <div className={"header-layout"}>
                 <button className={"prev-button"} onClick={onClickPrev}>
@@ -89,7 +92,6 @@ async function run() {
             </div>
             <div className={"box-center"}>
                 <div className={"upload-box box-center"}>
-                    ()
                     <p id={"text"}>upload an image of a food label.</p>
                     <form className={"box-center"} onSubmit={handleSubmit}>
                         <input
@@ -112,5 +114,6 @@ async function run() {
                 </div>
             </div>
         </div>
+        )
     );
 }
