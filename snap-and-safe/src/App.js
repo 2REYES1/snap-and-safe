@@ -4,6 +4,7 @@ import * as React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Dashboard from './Components/Dashboard/Dashboard';
+import Email from './Components/Email/Email';
 import FoodCheck from './Components/FoodCheck/FoodCheck';
 import PillCheck from './Components/PillCheck/PillCheck';
 
@@ -36,6 +37,12 @@ function App() {
               path="/foodCheck"
               element={(
                 <FoodCheck/>
+              )}
+            />
+            <Route
+              path="/email"
+              element={(
+                <Email/>
               )}
             />
           </Routes>
