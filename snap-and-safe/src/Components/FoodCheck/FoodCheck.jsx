@@ -11,7 +11,8 @@ export default function FoodCheck() {
     }
     const [selectedFile, setSelectedFile] = useState(null);
     const fileInputRef = useRef(null);
-
+    const [fileUploaded] = useState(false);
+    
     const handleFileChange = (e) => {
         setSelectedFile(e.target.files[0]);
     };
@@ -58,51 +59,4 @@ export default function FoodCheck() {
         </div>
     );
 }
-
-
-// import { useState, useRef } from 'react';
-
-// function FoodCheck() {
-//     const [selectedFile, setSelectedFile] = useState(null);
-//     const fileInputRef = useRef(null);
-
-//     const handleFileChange = (e) => {
-//         setSelectedFile(e.target.files[0]);
-//     };
-
-//     const handleButtonClick = () => {
-//         fileInputRef.current.click();
-//     };
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         console.log(selectedFile);
-//     };
-//     return (
-//         <div>
-//             <h2>Upload Image</h2>
-//             <form onSubmit={handleSubmit}>
-//                 <input
-//                     type="file"
-//                     ref={fileInputRef}
-//                     style={{ display: 'none' }}
-//                     onChange={handleFileChange}
-//                 />
-//                 <button type="button" onClick={handleButtonClick}>
-//                     Select a File
-//                 </button>
-//                 <button type="submit">Upload</button>
-//             </form>
-//             {selectedFile && (
-//                 <div>
-//                     <h3>Selected Image Preview</h3>
-//                     <img src={URL.createObjectURL(selectedFile)} alt="Selected" width="200" />
-//                 </div>
-//             )}
-//         </div>
-//     );
-// }
-
-// export default FoodCheck;
-
 
