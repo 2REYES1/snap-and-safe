@@ -49,7 +49,7 @@ function App() {
             <Route
               path="/pillSuccess"
               element={(
-                <PillSuccess/>
+                <PillSuccess response={"blah blah blah"}/>
               )}
             />
           </Routes>
