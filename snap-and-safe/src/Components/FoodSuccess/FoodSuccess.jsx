@@ -11,6 +11,17 @@ export default function FoodSuccess(props) {
     }
 
     const fileInputRef = useRef(null);
+    const labelAttr = JSON.parse(props.response.replace(/```json/g, '').replace(/```/g, ''));
+
+
+    // State to store the selected attribute value
+    const [selectedAttribute, setSelectedAttribute] = useState(null);
+
+    // Function to handle attribute selection
+    const handleAttributeSelect = (attribute) => {
+        setSelectedAttribute(attribute);
+    };
+    
 
     return (
         <div className={"main-layout"}>
@@ -22,14 +33,21 @@ export default function FoodSuccess(props) {
             <div className={"box-center"}>
                 <div className={"upload-box box-center"}>
                     <p>Image successfully uploaded.</p>
-                    <p style={{fontSize: "2vh"}}>{props.response}</p>
-                    <p>What attribute do you want to know about the food label?</p>
-                    <form className={"box-center"}>
-                        <input
-                        type="text"
-                        style={{width: "30vw", height: "15vh"}}
-                        />
-                    </form>
+                    {/* <p style={{fontSize: "2vh"}}>{labelAttr}</p> */}
+                    <div className="attribute-boxes">
+                        {/* Map over the keys of the labelAttr object and render a box for each key */}
+                        {Object.keys(labelAttr).map((key) => (
+                            <div
+                                key={key}
+                                className={`attribute-box ${selectedAttribute === key ? 'selected' : ''}`}
+                                onClick={() => handleAttributeSelect(key)}
+                            >
+                                {key}
+                            </div>
+                        ))}
+                    </div>
+                    {/* Display the selected attribute value */}
+                    <p>{selectedAttribute && `${selectedAttribute}: ${labelAttr[selectedAttribute]}`}</p>
                 </div>
             </div>
         </div>
