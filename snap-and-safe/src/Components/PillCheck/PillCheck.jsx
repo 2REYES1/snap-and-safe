@@ -41,7 +41,7 @@ export default function PillCheck() {
       ];
 
     // Access your API key (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI(API_KEY);
+const genAI = new GoogleGenerativeAI("AIzaSyBTq93OT7Fp9sMPE9CpjKXZKcMhtYRel_s");
 
 // Converts a File object to a GoogleGenerativeAI.Part object.
 async function fileToGenerativePart(file) {
@@ -71,9 +71,6 @@ async function run() {
   const text = response.text();
   console.log(text);
 }
-
-    run();
-
     return (
         <div className={"main-layout"}>
             <div className={"header-layout"}>
