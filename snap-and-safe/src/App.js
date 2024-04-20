@@ -7,6 +7,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Email from './Components/Email/Email';
 import FoodCheck from './Components/FoodCheck/FoodCheck';
 import PillCheck from './Components/PillCheck/PillCheck';
+import PillSuccess from './Components/PillSuccess/PillSuccess';
 
 function App() {
   const [currentRoute, setCurrentRoute] = React.useState('/');
@@ -43,6 +44,12 @@ function App() {
               path="/email"
               element={(
                 <Email/>
+              )}
+            />
+            <Route
+              path="/pillSuccess"
+              element={(
+                <PillSuccess/>
               )}
             />
           </Routes>

@@ -35,7 +35,8 @@ export default function PillCheck() {
             </div>
             <div className={"box-center"}>
                 <div className={"upload-box box-center"}>
-                    <p>upload an image of your food label.</p>
+                    <p id={"text"}>upload an image of a loose pill,
+                        pill bottle, or pill box</p>
                     <form className={"box-center"} onSubmit={handleSubmit}>
                         <input
                             type="file"
@@ -47,7 +48,7 @@ export default function PillCheck() {
                             Select a File
                         </button>
                         <button className={"upload-button"} type="submit">Upload</button>
-                </form>
+                    </form>
                 {selectedFile && (
                 <div>
                     <h3>This is your selected image.</h3>
