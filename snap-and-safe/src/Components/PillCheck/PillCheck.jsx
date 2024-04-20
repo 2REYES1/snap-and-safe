@@ -71,9 +71,6 @@ async function run() {
   const text = response.text();
   console.log(text);
 }
-
-    run();
-
     return (
         <div className={"main-layout"}>
             <div className={"header-layout"}>
