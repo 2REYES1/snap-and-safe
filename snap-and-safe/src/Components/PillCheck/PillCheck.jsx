@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
 // import model from '../../Gemini/Gemini';
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
+import PillSuccess from '../PillSuccess/PillSuccess';
 
 
 export default function PillCheck() {
@@ -15,13 +16,12 @@ export default function PillCheck() {
     }
 
     const [selectedFile, setSelectedFile] = useState(null);
+    const [geminiResponse, setGeminiResponse] = useState("");
+    const [loading, setLoading] = useState(false);
     const fileInputRef = useRef(null);
 
     const handleFileChange = (e) => {
         setSelectedFile(e.target.files[0]);
-        if(selectedFile) {
-            run();
-        }
     };
 
     const handleButtonClick = () => {
@@ -29,8 +29,12 @@ export default function PillCheck() {
     };
 
     const handleSubmit = (e) => {
+        setLoading(true);
         e.preventDefault();
         console.log(selectedFile);
+        if(selectedFile) {
+            run();
+        }
     };
 
     const safetySettings = [
@@ -57,7 +61,7 @@ async function fileToGenerativePart(file) {
 
 async function run() {
   // For text-and-images input (multimodal), use the gemini-pro-vision model
-  const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" , safetySettings});
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro-latest" , safetySettings});
 
   const prompt = "what medicine is this pill and what is it for?";
 
@@ -69,9 +73,12 @@ async function run() {
   const result = await model.generateContent([prompt, ...imageParts]);
   const response = await result.response;
   const text = response.text();
+  setGeminiResponse(text);
   console.log(text);
+  setLoading(false);
 }
     return (
+        (geminiResponse? <div>{<PillSuccess response={geminiResponse}/>}</div> : 
         <div className={"main-layout"}>
             <div className={"header-layout"}>
                 <button className={"prev-button"} onClick={onClickPrev}>
@@ -80,7 +87,11 @@ async function run() {
             </div>
             <div className={"box-center"}>
                 <div className={"upload-box box-center"}>
-                    <p id={"text"}>upload an image of a loose pill,
+                    {
+                        loading?
+                         <div className={"loader"}></div>
+                    : 
+                    <div><p id={"text"}>upload an image of a loose pill,
                         pill bottle, or pill box</p>
                     <form className={"box-center"} onSubmit={handleSubmit}>
                         <input
@@ -94,14 +105,17 @@ async function run() {
                         </button>
                         <button className={"upload-button"} type="submit">Upload</button>
                     </form>
-                {selectedFile && (
-                <div>
-                    <h3>This is your selected image.</h3>
-                    <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
-                </div>
-                )}
+                    {selectedFile && (
+                    <div>
+                        <h3>This is your selected image.</h3>
+                        <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
+                    </div>
+                    )}
+                    </div>
+                    }
                 </div>
             </div>
         </div>
+    )
     );
 }

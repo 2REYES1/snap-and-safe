@@ -44,7 +44,7 @@ export default function FoodCheck() {
       ];
 
     // Access your API key (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI("put api key here");
+const genAI = new GoogleGenerativeAI(API_KEY);
 
 // Converts a File object to a GoogleGenerativeAI.Part object.
 async function fileToGenerativePart(file) {
@@ -86,6 +86,7 @@ async function run() {
             </div>
             <div className={"box-center"}>
                 <div className={"upload-box box-center"}>
+                    ()
                     <p id={"text"}>upload an image of a food label.</p>
                     <form className={"box-center"} onSubmit={handleSubmit}>
                         <input
@@ -99,12 +100,12 @@ async function run() {
                         </button>
                         <button className={"upload-button"} type="submit">Upload</button>
                     </form>
-                {selectedFile && (
-                <div>
-                    <h3>This is your selected image.</h3>
-                    <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
-                </div>
-                )}
+                    {selectedFile && (
+                    <div>
+                        <h3>This is your selected image.</h3>
+                        <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
+                    </div>
+                    )}
                 </div>
             </div>
         </div>

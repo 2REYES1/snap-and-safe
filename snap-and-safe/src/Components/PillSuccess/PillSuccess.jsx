@@ -10,7 +10,6 @@ export default function PillSuccess(props) {
         navigate('/');
     }
 
-    const [selectedFile, setSelectedFile] = useState(null);
     const fileInputRef = useRef(null);
 
     return (
