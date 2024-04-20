@@ -30,18 +30,18 @@ export default function FoodCheck() {
             <div class = "box-center">
                 <div class = "upload-box box-center">
                     <p>upload an image of your food label.</p>
-                    <form onSubmit={handleSubmit}>
-                    <input
-                    type="file"
-                    ref={fileInputRef}
-                    style={{ display: 'none' }}
-                    onChange={handleFileChange}
-                />
-                <button type="button" onClick={handleButtonClick}>
-                    Select a File
-                </button>
-                <button type="submit">Upload</button>
-            </form>
+                    <form class = "box-center" onSubmit={handleSubmit}>
+                        <input
+                            type="file"
+                            ref={fileInputRef}
+                            style={{ display: 'none' }}
+                            onChange={handleFileChange}
+                        />
+                        <button class= "select-file-button" type="button" onClick={handleButtonClick}>
+                            Select a File
+                        </button>
+                        <button class = "upload-button" type="submit">Upload</button>
+                </form>
                 </div>
             </div>
         </div>
