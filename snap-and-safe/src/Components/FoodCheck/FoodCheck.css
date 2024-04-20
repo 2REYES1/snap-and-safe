@@ -99,3 +99,12 @@ form.box-center{
     font-style: normal;
     font-size: 15pt;
 }
+
+h3{
+    color:white;
+    font-size: 15pt;
+    font-family: serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
