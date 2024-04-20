@@ -6,19 +6,20 @@ import { useNavigate } from 'react-router';
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 
 
-
 export default function FoodCheck() {
     const navigate = useNavigate();
+    // const fs = require("fs");
 
     function onClickPrev() {
         navigate('/');
     }
+
     const [selectedFile, setSelectedFile] = useState(null);
     const fileInputRef = useRef(null);
-    const [fileUploaded] = useState(false);
-    
+
     const handleFileChange = (e) => {
         setSelectedFile(e.target.files[0]);
+        
     };
 
     const handleButtonClick = () => {
@@ -28,8 +29,12 @@ export default function FoodCheck() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(selectedFile);
+        if(selectedFile) {
+            console.log("RUNNING RUN")
+            run();
+            console.log("DONE WITH RUN")
+        }
     };
-
 
     const safetySettings = [
         {
@@ -39,7 +44,7 @@ export default function FoodCheck() {
       ];
 
     // Access your API key (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI(API_KEY);
+const genAI = new GoogleGenerativeAI("put api key here");
 
 // Converts a File object to a GoogleGenerativeAI.Part object.
 async function fileToGenerativePart(file) {
@@ -57,7 +62,7 @@ async function run() {
   // For text-and-images input (multimodal), use the gemini-pro-vision model
   const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" , safetySettings});
 
-  const prompt = "What information do you want to know from the food label?";
+  const prompt = "get the information from this food label and format it in a more readable way";
 
   const fileInputEl = document.querySelector("input[type=file]");
   const imageParts = await Promise.all(
@@ -70,31 +75,30 @@ async function run() {
   console.log(text);
 }
 
-    run();
-
+    
 
     return (
-        <div class = "main-layout">
-            <div class = "header-layout">
-                <button class = "prev-button" onClick={onClickPrev}>
+        <div className={"main-layout"}>
+            <div className={"header-layout"}>
+                <button className={"prev-button"} onClick={onClickPrev}>
                     Prev
                 </button>
             </div>
-            <div class = "box-center">
-                <div class = "upload-box box-center">
-                    <p>upload an image of your food label.</p>
-                    <form class = "box-center" onSubmit={handleSubmit}>
+            <div className={"box-center"}>
+                <div className={"upload-box box-center"}>
+                    <p id={"text"}>upload an image of a food label.</p>
+                    <form className={"box-center"} onSubmit={handleSubmit}>
                         <input
                             type="file"
                             ref={fileInputRef}
                             style={{ display: 'none' }}
                             onChange={handleFileChange}
                         />
-                        <button class= "select-file-button" type="button" onClick={handleButtonClick}>
+                        <button className={"select-file-button"} type="button" onClick={handleButtonClick}>
                             Select a File
                         </button>
-                        <button class = "upload-button" type="submit">Upload</button>
-                </form>
+                        <button className={"upload-button"} type="submit">Upload</button>
+                    </form>
                 {selectedFile && (
                 <div>
                     <h3>This is your selected image.</h3>
@@ -106,4 +110,3 @@ async function run() {
         </div>
     );
 }
-
