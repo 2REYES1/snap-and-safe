@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+/* eslint-disable react/jsx-no-bind */
 import './App.css';
+import * as React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Dashboard from './Components/Dashboard/Dashboard';
+import FoodCheck from './Components/FoodCheck/FoodCheck';
+import PillCheck from './Components/PillCheck/PillCheck';
 
 function App() {
+  const [currentRoute, setCurrentRoute] = React.useState('/');
+
+  function handleCurrentRoute(route) {
+    setCurrentRoute(route);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Dashboard />
+              }
+            />
+            <Route
+              path="/pillCheck"
+              element={(
+                <PillCheck
+                />
+              )}
+            />
+            <Route
+              path="/foodCheck"
+              element={(
+                <FoodCheck/>
+              )}
+            />
+          </Routes>
+        </main>
+      </BrowserRouter>
     </div>
   );
 }
