@@ -112,3 +112,43 @@ h3{
 #text {
     width: 30vw;
 }
+
+.attribute-boxes{
+    /* height: 70%; */
+    overflow-y: auto;
+    width:50%;
+}
+.attribute-box {
+    background: white; 
+    margin: 15px;   
+    border-radius: 20px;
+    font-family: serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15pt;
+    height: 40px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.attribute-box.selected {
+    /* Styles for the attribute-box when it is selected */
+    background: #084D8D;
+    color:white; 
+    margin: 15px;   
+    border-radius: 20px;
+    font-family: serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15pt;
+  }
+
+  .attribute-box:hover {
+    /* Add your hover styles here */
+    background: #5bc2d0;
+  }
+  

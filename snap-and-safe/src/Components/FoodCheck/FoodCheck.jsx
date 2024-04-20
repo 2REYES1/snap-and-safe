@@ -63,7 +63,7 @@ async function run() {
   // For text-and-images input (multimodal), use the gemini-pro-vision model
   const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" , safetySettings});
 
-  const prompt = "get the information from this food label and format it into a json.";
+  const prompt = "get the information from this food label and format each atrribute into a json object where every key and value is a string."
 
   const fileInputEl = document.querySelector("input[type=file]");
   const imageParts = await Promise.all(
