@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 
+
 export default function Dashboard() {
     const navigate = useNavigate();
     function onClickPills() {
@@ -14,16 +15,19 @@ export default function Dashboard() {
     return (
         <div className={"dash"}>
             <div className={"logo"}>
-                Snap & Safe
+                SNAP <span style={{ fontWeight: '250' }}>&</span>&nbsp;SAFE
             </div>
-            <div className={"dashButtons"}>
+            <div className='button-align'>
                 <button id={"clickPills"} onClick={onClickPills}>
-                    check pills
-                </button>
-                <button id={"clickFood"} onClick={onClickFood}>
-                    check food label
+                    <p>check pills</p>
                 </button>
             </div>
+            <div className='box-center'>
+                <button id={"clickFood"} onClick={onClickFood}>
+                    <p>check food label</p>
+                </button>
+            </div>
+    
         </div>
     );
 }

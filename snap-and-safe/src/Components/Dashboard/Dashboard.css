@@ -1,35 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+
+
+
+.source-serif-4-500 {
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.box-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
 .dash {
     background-color: #D2FAFF;
     background-size: cover;
     height: 100vh;
     width: 100vw;
+    display: grid;
+    grid-template-rows: 0.2fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .logo {
     color: #084D8D;
-    font-family: serif;
-    font-size: 16vh;
-    font-weight: bold;
-    padding-top: 5vh;
+    font-family: "Source Serif 4", serif;
+    font-size: 18vh;
+    font-weight: 900;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 100px;
+    align-content: center;
+    padding: 0;
+    grid-column: span 2;
 }
 
-.dashButtons {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-}
 
 #clickPills {
-    margin-top: 15vh;
-    margin-bottom: 1vh;
+    /* margin-top: 15vh;
+    margin-bottom: 1vh; */
     width: 33vw;
-    height: 15vh;
+    height: 30vh;
     border-radius: 40px;
     border-style: hidden;
     background-color: #397175;
     color: white;
     font-family: serif;
-    font-size: 6vh;
-    margin-left: 34vw;
+    font-size: 8vh;
+    /* margin-left: 34vw; */
 }
 
 #clickPills:hover {
@@ -37,18 +60,32 @@
 }
 
 #clickFood {
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
     width: 33vw;
-    height: 15vh;
+    height: 30vh;
     border-radius: 40px;
     border-style: hidden;
     background-color: #397175;
     color: white;
     font-family: serif;
-    font-size: 6vh;
-    margin-left: 34vw;
+    font-size: 8vh;
+    font-weight: 900;
+    
+}
+
+p {
+    text-align: left;
+    margin-left: 20px;
+    font-weight: 900;
 }
 
 #clickFood:hover {
     background-color: #084D8D;
 }
+
+.button-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
