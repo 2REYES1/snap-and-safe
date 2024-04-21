@@ -220,7 +220,7 @@ async function run() {
                             fontSize: "3vh",
                             color: "white",
                         }}>
-                            Email:
+                           Send an email reminder:
                         </p>
                         <input
                         type="email"
