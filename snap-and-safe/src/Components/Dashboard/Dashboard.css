@@ -45,7 +45,7 @@
     /* margin-top: 15vh;
     margin-bottom: 1vh; */
     width: 33vw;
-    height: 30vh;
+    height: 50vh;
     border-radius: 40px;
     border-style: hidden;
     background-color: #397175;
@@ -62,7 +62,7 @@
 #clickFood {
     /* margin-top: 5vh; */
     width: 33vw;
-    height: 30vh;
+    height: 50vh;
     border-radius: 40px;
     border-style: hidden;
     background-color: #397175;
@@ -74,7 +74,7 @@
 }
 
 p {
-    text-align: left;
+    text-align: center;
     margin-left: 20px;
     font-weight: 900;
 }
@@ -88,4 +88,5 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
   }

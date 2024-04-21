@@ -22,7 +22,7 @@ export default function Dashboard() {
                     <p>check pills</p>
                 </button>
             </div>
-            <div className='box-center'>
+            <div className='button-align'>
                 <button id={"clickFood"} onClick={onClickFood}>
                     <p>check food label</p>
                 </button>
