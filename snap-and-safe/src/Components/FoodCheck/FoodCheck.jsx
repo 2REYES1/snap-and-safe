@@ -92,13 +92,13 @@ async function run() {
                 </button>
             </div>
             <div className={"box-center"}>
-                <div className={"upload-box box-center"}>
+                <div className={"fc-upload-box fc-box-center"}>
                     {
                         loading?
                          <div className={"loader"}></div>
                         : 
-                        <div>
-                            <p id={"text"}>upload an image of a food label.</p>
+                        <div className = {"fc-upload-box fc-box-center"}>
+                            <p className={"fc-prompt-text"}>upload an image of a food label.</p>
                             <form className={"box-center"} onSubmit={handleSubmit}>
                                 <input
                                     type="file"
@@ -107,16 +107,17 @@ async function run() {
                                     onChange={handleFileChange}
                                 />
                                 <button className={"select-file-button"} type="button" onClick={handleButtonClick}>
-                                    Select a File
+                                    select image
                                 </button>
+                                {selectedFile && (
+                                    <div>
+                                        <h3>This is your selected image.</h3>
+                                        <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
+                                    </div>
+                                    )}
                                 <button className={"upload-button"} type="submit">Upload</button>
                             </form>
-                            {selectedFile && (
-                            <div>
-                                <h3>This is your selected image.</h3>
-                                <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
-                            </div>
-                            )}
+                            
                         </div>
                     }
                 </div>
