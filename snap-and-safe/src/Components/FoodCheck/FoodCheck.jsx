@@ -110,15 +110,16 @@ async function run() {
                                 />
                                 <button className={"fc-select-file-button"} type="button" onClick={handleButtonClick}>
                                     select image
-                                </button>
-                                {selectedFile && (
+                                </button> 
+                            </form> 
+                            <div>
+                            {selectedFile && (
                                     <div>
-                                        <h3>This is your selected image.</h3>
+                                        <h3>this is your selected image.</h3>
                                         <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
                                     </div>
                                     )}
-                                
-                            </form>
+                            </div>
                             <div className={"fc-upload-button-div"}>
                                 <button className={"fc-upload-button"} type="submit">upload</button>
                             </div>

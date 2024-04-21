@@ -75,7 +75,9 @@ p{
     width: 50vw;
     border-radius: 20px;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .upload-box{
@@ -94,9 +96,9 @@ p{
     font-style: normal;
     background-color: white;
     border-radius: 40px;
-    font-size: 40pt;
-    height: 150px;
-    width: 450px;
+    font-size: 30pt;
+    height: 100px;
+    width: 400px;
 
 }
 
@@ -120,9 +122,9 @@ form.box-center{
     font-style: normal;
     background-color: white;
     border-radius: 40px;
-    font-size: 30pt;
-    height: 80px;
-    width: 350px;
+    font-size: 25pt;
+    height: 70px;
+    width: 200px;
 }
 
 .fc-upload-button:hover{
@@ -168,10 +170,10 @@ h3{
 
 .fc-prompt-text {
     /* font-style: italic; */
-    margin: 20px;
-    margin-bottom: 40px;
+    margin: 10px;
+    /* margin-bottom: 40px; */
     font-weight: 300;
-    font-size: 35pt;
+    font-size: 25pt;
     color: white;
     display: flex;
     flex-direction: column;
