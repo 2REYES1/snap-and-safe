@@ -23,7 +23,7 @@ p{
 
 }
 
-.box-center {
+.fc-box-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,7 +48,7 @@ p{
     font-size: 30px;
     font-family: serif;
     font-optical-sizing: auto;
-    font-weight: 900;
+    /* font-weight: 900; */
     font-style: normal;
 }
 
@@ -60,14 +60,14 @@ p{
     align-items: center;
 }
 
-.upload-box{
+.fc-upload-box{
     background-color: #397175;
     height: 70vh;
     width: 50vw;
     border-radius: 20px;
 }
 
-.upload-box p{
+.upload-box{
     color: white;
     font-family: serif;
     font-optical-sizing: auto;
@@ -84,6 +84,8 @@ p{
     background-color: white;
     border-radius: 20px;
     font-size: 25pt;
+    height: 100px;
+    width: 450px;
 
 }
 
@@ -123,5 +125,12 @@ h3{
     100% { transform: rotate(360deg); }
   }
 
+.fc-prompt-text {
+    font-style: italic;
+    margin: 20px;
+    font-weight: 300;
+    font-size: 35pt;
+    color: white;
+}
 
   

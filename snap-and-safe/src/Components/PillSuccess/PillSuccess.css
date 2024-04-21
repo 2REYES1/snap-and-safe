@@ -112,3 +112,18 @@ h3{
 #text {
     width: 30vw;
 }
+
+.inputs {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 0vw;
+}
+
+.email-input {
+    background-color: #397175;
+    margin-right: 3vw;
+    margin-top: 10vh;
+    padding: 3vh;
+    height: 60vh;
+    border-radius: 20px;
+}

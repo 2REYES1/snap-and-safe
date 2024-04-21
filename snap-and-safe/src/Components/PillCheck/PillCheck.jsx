@@ -8,6 +8,8 @@ import PillSuccess from '../PillSuccess/PillSuccess';
 
 
 export default function PillCheck() {
+    const apiKey = process.env.REACT_APP_API_KEY;
+    console.log(apiKey);
     const navigate = useNavigate();
     // const fs = require("fs");
 
@@ -45,7 +47,7 @@ export default function PillCheck() {
       ];
 
     // Access your API key (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI(API_KEY);
+const genAI = new GoogleGenerativeAI(apiKey);
 
 // Converts a File object to a GoogleGenerativeAI.Part object.
 async function fileToGenerativePart(file) {
