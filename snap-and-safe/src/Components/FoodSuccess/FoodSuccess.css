@@ -117,17 +117,20 @@ h3{
     /* height: 70%; */
     overflow-y: auto;
     width:50%;
+    color:black;
+    height: 50%;
 }
 .attribute-box {
     background: white; 
-    margin: 15px;   
+    color:black;
+    margin: 20px;   
     border-radius: 20px;
     font-family: serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 15pt;
-    height: 40px;
+    font-size: 20pt;
+    height: 70px;
     width: auto;
     display: flex;
     align-items: center;
@@ -144,11 +147,16 @@ h3{
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 15pt;
+    font-size: 20pt;
+    /* border: 5px solid white; */
   }
 
   .attribute-box:hover {
     /* Add your hover styles here */
-    background: #5bc2d0;
+    background: transparent;
+    color: white;
+    margin: 15px;   
+    border-radius: 20px;
+    border: 2px solid white;
   }
   
