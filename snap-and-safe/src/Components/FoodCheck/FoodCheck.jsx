@@ -89,8 +89,8 @@ async function run() {
         (geminiResponse? <div>{<FoodSuccess response={geminiResponse}/>}</div> :
         <div className={"main-layout"}>
             <div className={"header-layout"}>
-                <button className={"prev-button"} onClick={onClickPrev}>
-                    Prev
+                <button className={"fc-prev-button"} onClick={onClickPrev}>
+                    back
                 </button>
             </div>
             <div className={"box-center"}>
@@ -99,8 +99,8 @@ async function run() {
                         loading?
                          <div className={"loader"}></div>
                         : 
-                        <div className = {"fc-upload-box fc-box-center"}>
-                            <p className={"fc-prompt-text"}>upload an image of a food label.</p>
+                        <div className = {"fc-upload-box"}>
+                            <p className={"fc-prompt-text fc-box-center"}>upload an image of a food label.</p>
                             <form className={"box-center"} onSubmit={handleSubmit}>
                                 <input
                                     type="file"
@@ -108,7 +108,7 @@ async function run() {
                                     style={{ display: 'none' }}
                                     onChange={handleFileChange}
                                 />
-                                <button className={"select-file-button"} type="button" onClick={handleButtonClick}>
+                                <button className={"fc-select-file-button"} type="button" onClick={handleButtonClick}>
                                     select image
                                 </button>
                                 {selectedFile && (
@@ -117,9 +117,11 @@ async function run() {
                                         <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
                                     </div>
                                     )}
-                                <button className={"upload-button"} type="submit">Upload</button>
+                                
                             </form>
-                            
+                            <div className={"fc-upload-button-div"}>
+                                <button className={"fc-upload-button"} type="submit">upload</button>
+                            </div>
                         </div>
                     }
                 </div>
