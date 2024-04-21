@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router';
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 
 export default function PillSuccess(props) {
+    const apiKey = process.env.REACT_APP_API_KEY;
+    console.log(apiKey);
+
     const [loading, setLoading] = useState(false);
     const [userInput, setUserInput] = useState('');
     const [newResponse, setNewResponse] = useState('');
@@ -24,7 +27,7 @@ export default function PillSuccess(props) {
       ];
 
     // Access your API key (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI("");
+const genAI = new GoogleGenerativeAI(apiKey);
 
 async function run() {
     // For text-only input, use the gemini-pro model
