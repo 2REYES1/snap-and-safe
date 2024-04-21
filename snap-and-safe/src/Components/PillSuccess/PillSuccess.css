@@ -70,7 +70,7 @@
 
 .upload-box{
     background-color: #397175;
-    height: 70vh;
+    height: 80vh;
     width: 50vw;
     border-radius: 20px;
 }
@@ -81,7 +81,7 @@
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
-    font-size: 40px;
+    font-size: 4vh;
 }
 
 .select-file-button{
