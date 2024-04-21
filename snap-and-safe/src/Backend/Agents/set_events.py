@@ -42,7 +42,7 @@ def main(medication, time_to_take):
   try:
     service = build("calendar", "v3", credentials=creds)
 
-    description = f'A time to take your {medication}'
+    description = f'{medication}'
 
     start_time = time_to_take # '2024-04-21T09:00:00-09:00'
     date_time_obj = datetime.fromisoformat(start_time)

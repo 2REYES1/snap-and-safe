@@ -8,7 +8,7 @@ import PillSuccess from '../PillSuccess/PillSuccess';
 
 
 export default function PillCheck() {
-    const apiKey = process.env.REACT_APP_API_KEY;
+    const apiKey = "AIzaSyA_DFA0Qj49YggyhXe6PuaM6_eZb2MW_Jg";
     console.log(apiKey);
     const navigate = useNavigate();
     // const fs = require("fs");

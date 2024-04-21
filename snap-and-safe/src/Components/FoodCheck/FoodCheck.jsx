@@ -7,7 +7,7 @@ import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/ge
 import FoodSuccess from '../FoodSuccess/FoodSuccess';
 
 export default function FoodCheck() {
-    const apiKey = process.env.REACT_APP_API_KEY;
+    const apiKey = "AIzaSyA_DFA0Qj49YggyhXe6PuaM6_eZb2MW_Jg";
     console.log(apiKey);
     const navigate = useNavigate();
     // const fs = require("fs");

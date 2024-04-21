@@ -7,6 +7,7 @@ from flask_cors import CORS
 
 florance = Agent(name="Florence", seed="nightingale")
 
+global_data = ""
 
 app = Flask(__name__)
 CORS(app)  # This enables CORS for all domains on all routes
@@ -15,6 +16,10 @@ CORS(app)  # This enables CORS for all domains on all routes
 def receive_data():
     data = request.get_json()
     print("Received data:", data)
+    global global_data
+    global_data = data
+
+    florance.run()
     return jsonify({"status": "Data received successfully"}), 200
 
 # def load_data_from_json(filepath):
@@ -45,6 +50,7 @@ class Message(Model):
 
 prac = "pus"
 timing = '2024-04-21T09:00:00-09:00'
+timing1 = '2024-04-21T22:30:00.000Z'
 
 @florance.on_event("startup")
 async def send_msg(ctx: Context):
@@ -53,7 +59,8 @@ async def send_msg(ctx: Context):
     # Sending the user's message back to the sender (restaurant agent)
     complete = f"Your medication of  is added onto your calendar"
     # main(data.user_email_input, timestamp)
-    main(prac, timing)
+    print(global_data, "this is my glo")
+    main(global_data['userEmailInput'], global_data['time'])
     ctx.logger.info(complete)
 
 

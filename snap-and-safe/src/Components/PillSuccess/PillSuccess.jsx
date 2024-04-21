@@ -9,11 +9,11 @@ import { useNavigate } from 'react-router';
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 
 export default function PillSuccess(props) {
-    const [time, setTime] = React.useState(dayjs('2022-04-21T15:30'));
+    const [time, setTime] = React.useState(dayjs('2024-04-21T15:30'));
     const [userEmailInput, setUserEmailInput] = useState('');
     const [email, setEmail] = useState('');
 
-    const apiKey = process.env.REACT_APP_API_KEY;
+    const apiKey = "AIzaSyA_DFA0Qj49YggyhXe6PuaM6_eZb2MW_Jg";
 
     const [loading, setLoading] = useState(false);
     const [userInput, setUserInput] = useState('');
