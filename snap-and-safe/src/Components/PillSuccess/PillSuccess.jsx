@@ -99,6 +99,8 @@ async function run() {
                             borderColor: "white",
                             borderStyle: "solid",
                             backgroundColor: "transparent",
+                            fontSize: "2.5vh",
+                            fontFamily: "serif",
                             }}>Submit</button>
                     </form>
                     </div>
