@@ -87,7 +87,7 @@ return (
             <button className={"pc-prev-button"} onClick={onClickPrev}>
                 back
             </button>
-            
+        
         </div>
         <div className={"box-center"}>
             <div className={"pc-upload-box pc-box-center"}>
