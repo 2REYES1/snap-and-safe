@@ -59,13 +59,99 @@ async function run() {
     run();
   }
   
+//   const fs = require('fs');
+
+// async function emailSubmit(event) {
+//     event.preventDefault();
+//     const email = event.target.elements.email.value;
+//     console.log("Email submitted:", email);
+//     axios.get('http://localhost:5000/email')
+//         .then(response => {
+//             console.log('Email sent:', response.data);
+//         })
+//         .catch(error => {
+//             console.error('Error sending email:', error);
+//         });
+// }
+
   function handleEmailSubmit(e) {
     // Prevent the browser from reloading the page
     e.preventDefault();
-    console.log(email);
-    console.log(userEmailInput);
-    console.log(time.$d);
+
+    const data = {
+        email: email,
+        userEmailInput: userEmailInput,
+        time: time.$d
+    };
+
+    console.log(JSON.stringify(data));
+
+    fetch('http://localhost:5000/receive_data', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => console.log('Success:', data))
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+    // console.log(email);
+    // console.log(userEmailInput);
+    // console.log(time.$d);
+    // const data = {
+    //     email: email,
+    //     userEmailInput: userEmailInput,
+    //     time: time.$d
+    // }
+
+    //     axios.get('http://localhost:5000/receive_data')
+    //     .then(response => {
+    //         console.log('Email sent:', response.data);
+    //     })
+    //     .catch(error => {
+    //         console.error('Error sending email:', error);
+    //     });
+
+    // const jsonData = JSON.stringify(data);
+    // function sendData() {
+        // const data = {
+        //     email: 'example@example.com',
+        //     userEmailInput: 'user@example.com',
+        //     timestamp: new Date().toISOString()
+        // };
+    
+        // fetch('http://localhost:5000/receive_data', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        // .then(response => response.json())
+        // .then(data => console.log('Success:', data))
+        // .catch((error) => {
+        //     console.error('Error:', error);
+        // });
+    // }
+
+    // // Write JSON data to a file
+    // fs.writeFile('data.json', jsonData, (err) => {
+    //     if (err) {
+    //         console.error('Error writing JSON to file:', err);
+    //     } else {
+    //         console.log('JSON file has been saved.');
+    //     }
+    // });
   }
+
 
     return (
         <div className={"main-layout"}>
