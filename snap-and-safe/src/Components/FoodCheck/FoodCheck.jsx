@@ -101,7 +101,7 @@ async function run() {
                         : 
                         <div className = {"fc-upload-box"}>
                             <p className={"fc-prompt-text fc-box-center"}>upload an image of a food label.</p>
-                            <form className={"box-center"} onSubmit={handleSubmit}>
+                            <div className={"box-center"}>
                                 <input
                                     type="file"
                                     ref={fileInputRef}
@@ -111,7 +111,7 @@ async function run() {
                                 <button className={"fc-select-file-button"} type="button" onClick={handleButtonClick}>
                                     select image
                                 </button> 
-                            </form> 
+                            </div> 
                             <div>
                             {selectedFile && (
                                     <div>
@@ -120,7 +120,7 @@ async function run() {
                                     </div>
                                     )}
                             </div>
-                            <div className={"fc-upload-button-div"}>
+                            <div className={"fc-upload-button-div"} onClick={handleSubmit}>
                                 <button className={"fc-upload-button"} type="submit">upload</button>
                             </div>
                         </div>

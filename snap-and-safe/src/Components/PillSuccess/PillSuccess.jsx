@@ -157,7 +157,7 @@ async function run() {
         <div className={"main-layout"}>
             <div className={"header-layout"}>
                 <button className={"prev-button"} onClick={onClickPrev}>
-                    Prev
+                    back
                 </button>
             </div>
             <div className={"inputs"}>
