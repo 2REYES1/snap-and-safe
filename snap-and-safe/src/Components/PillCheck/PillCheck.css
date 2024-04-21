@@ -23,7 +23,7 @@
 
 }
 
-.box-center {
+.pc-box-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +38,7 @@
     
 }
 
-.prev-button {
+.pc-prev-button {
     background-color: #084D8D;
     border-radius: 20px;
     color: white;
@@ -48,8 +48,17 @@
     font-size: 30px;
     font-family: serif;
     font-optical-sizing: auto;
-    font-weight: 900;
+    /* font-weight: 900; */
     font-style: normal;
+}
+
+.pc-prev-button:hover{
+    background: transparent;
+    color: #084D8D;
+    /* margin: 15px;    */
+    font-weight: 900;
+    border-radius: 20px;
+    border: 5px solid #084D8D;
 }
 
 
@@ -60,14 +69,18 @@
     align-items: center;
 }
 
-.upload-box{
+.pc-upload-box{
     background-color: #397175;
     height: 70vh;
     width: 50vw;
     border-radius: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    /* display: flex;
+    flex-direction: column; */
 }
 
-.upload-box p{
+.upload-box{
     color: white;
     font-family: serif;
     font-optical-sizing: auto;
@@ -76,14 +89,25 @@
     font-size: 40px;
 }
 
-.select-file-button{
+.pc-select-file-button{
     font-family: serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
     background-color: white;
-    border-radius: 20px;
-    font-size: 25pt;
+    border-radius: 40px;
+    font-size: 30pt;
+    height: 100px;
+    width: 400px;
+
+}
+
+.pc-select-file-button:hover{
+    background: transparent;
+    color: white;
+    /* margin: 15px;    */
+    border-radius: 40px;
+    border: 5px solid white;
 
 }
 
@@ -91,13 +115,33 @@ form.box-center{
     gap: 20px;
 }
 
-.upload-button{
-    border-radius: 20px;
+.pc-upload-button{
     font-family: serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-    font-size: 15pt;
+    background-color: white;
+    border-radius: 40px;
+    font-size: 25pt;
+    height: 70px;
+    width: 200px;
+}
+
+.pc-upload-button:hover{
+    background: transparent;
+    color: white;
+    /* margin: 15px;    */
+    border-radius: 40px;
+    border: 5px solid white;
+}
+
+.pc-upload-button-div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: 30px;
+    
 }
 
 h3{
@@ -107,10 +151,7 @@ h3{
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-}
-
-#text {
-    width: 30vw;
+    
 }
 
 .loader {
@@ -120,9 +161,26 @@ h3{
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
+    margin-top: 100px;
+    
   }
-  
-  @keyframes spin {
+
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+.pc-prompt-text {
+    /* font-style: italic; */
+    margin: 10px;
+    /* margin-bottom: 40px; */
+    font-weight: 300;
+    font-size: 25pt;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+  

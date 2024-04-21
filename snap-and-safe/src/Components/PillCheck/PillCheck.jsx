@@ -79,45 +79,51 @@ async function run() {
   console.log(text);
   setLoading(false);
 }
-    return (
-        (geminiResponse? <div>{<PillSuccess response={geminiResponse}/>}</div> : 
-        <div className={"main-layout"}>
-            <div className={"header-layout"}>
-                <button className={"prev-button"} onClick={onClickPrev}>
-                    Prev
-                </button>
-            </div>
-            <div className={"box-center"}>
-                <div className={"upload-box box-center"}>
-                    {
-                        loading?
-                         <div className={"loader"}></div>
+return (
+    
+    (geminiResponse? <div>{<PillSuccess response={geminiResponse}/>}</div> :
+    <div className={"main-layout"}>
+        <div className={"header-layout"}>
+            <button className={"pc-prev-button"} onClick={onClickPrev}>
+                back
+            </button>
+            
+        </div>
+        <div className={"box-center"}>
+            <div className={"pc-upload-box pc-box-center"}>
+                {
+                    loading?
+                     <div className={"loader box-center"} ></div>
                     : 
-                    <div><p id={"text"}>upload an image of a loose pill,
-                        pill bottle, or pill box</p>
-                    <form className={"box-center"} onSubmit={handleSubmit}>
-                        <input
-                            type="file"
-                            ref={fileInputRef}
-                            style={{ display: 'none' }}
-                            onChange={handleFileChange}
-                        />
-                        <button className={"select-file-button"} type="button" onClick={handleButtonClick}>
-                            Select a File
-                        </button>
-                        <button className={"upload-button"} type="submit">Upload</button>
-                    </form>
-                    {selectedFile && (
-                    <div>
-                        <h3>This is your selected image.</h3>
-                        <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
+                    <div className = {"pc-upload-box"}>
+                        <p className={"pc-prompt-text pc-box-center"}>upload an image of a food label.</p>
+                        <div className={"box-center"}>
+                            <input
+                                type="file"
+                                ref={fileInputRef}
+                                style={{ display: 'none' }}
+                                onChange={handleFileChange}
+                            />
+                            <button className={"pc-select-file-button"} type="button" onClick={handleButtonClick}>
+                                select image
+                            </button> 
+                        </div> 
+                        <div>
+                        {selectedFile && (
+                                <div>
+                                    <h3>this is your selected image.</h3>
+                                    <img src={URL.createObjectURL(selectedFile)} alt="Selected" height="200" />
+                                </div>
+                                )}
+                        </div>
+                        <div className={"pc-upload-button-div"}>
+                            <button className={"pc-upload-button" } type="submit" onClick={handleSubmit}>upload</button>
+                        </div>
                     </div>
-                    )}
-                    </div>
-                    }
-                </div>
+                }
             </div>
         </div>
+    </div>
     )
-    );
+);
 }
