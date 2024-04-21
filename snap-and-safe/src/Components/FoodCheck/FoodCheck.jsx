@@ -7,6 +7,8 @@ import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/ge
 import FoodSuccess from '../FoodSuccess/FoodSuccess';
 
 export default function FoodCheck() {
+    const apiKey = process.env.REACT_APP_API_KEY;
+    console.log(apiKey);
     const navigate = useNavigate();
     // const fs = require("fs");
 
@@ -45,7 +47,7 @@ export default function FoodCheck() {
       ];
 
     // Access your API key (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI("");
+const genAI = new GoogleGenerativeAI(apiKey);
 
 // Converts a File object to a GoogleGenerativeAI.Part object.
 async function fileToGenerativePart(file) {
