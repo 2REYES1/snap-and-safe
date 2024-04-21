@@ -96,7 +96,8 @@ return (
                      <div className={"loader box-center"} ></div>
                     : 
                     <div className = {"pc-upload-box"}>
-                        <p className={"pc-prompt-text pc-box-center"}>upload an image of a food label.</p>
+                        <p className={"pc-prompt-text pc-box-center"}>upload an image of a loose pill,
+                        pill bottle, or pill box</p>
                         <div className={"box-center"}>
                             <input
                                 type="file"
