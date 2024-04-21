@@ -45,21 +45,6 @@ async function run() {
     // Prevent the browser from reloading the page
     e.preventDefault();
     run();
-
-    // console.log(userInput);
-
-    // Read the form data
-    // const form = e.target.value;
-    // const formData = new FormData(form);
-
-    // console.log(form);
-    // console.log(formData.entries());
-    // // You can pass formData as a fetch body directly:
-    // fetch('/some-api', { method: form.method, body: formData });
-
-    // // Or you can work with it as a plain object:
-    // const formJson = Object.fromEntries(formData.entries());
-    // console.log(formJson);
   }
   
 
@@ -71,37 +56,50 @@ async function run() {
                 </button>
             </div>
             <div className={"box-center"}>
-            {/* <form className={"box-center"} onSubmit={handleSubmit}>
-                        <input
-                            type="file"
-                            ref={fileInputRef}
-                            style={{ display: 'none' }}
-                            onChange={handleFileChange}
-                        />
-                        <button className={"select-file-button"} type="button" onClick={handleButtonClick}>
-                            Select a File
-                        </button>
-                        <button className={"upload-button"} type="submit">Upload</button>
-                    </form> */}
                 <div className={"upload-box box-center"}>
                 {
                         loading?
                          <div className={"loader"}></div>
                     : 
                     <div>
-                    <p>Image successfully uploaded.</p>
-                    <p style={{fontSize: "2vh"}}>{newResponse? newResponse : props.response}</p>
-                    <p>Is there anything else about this pill you would like to know?</p>
+                    <p style={{textAlign: "center"}}>Image successfully uploaded.</p>
+                    <div style={{ height: '25vh', overflowY: 'scroll' }}> 
+                    <p style={{
+                        fontSize: "3vh",
+                        paddingLeft: "5vw",
+                        paddingRight: "5vw",
+                        fontWeight: "initial"
+                        }}>
+                    {newResponse? newResponse : props.response}
+                    </p>
+                    </div>
+                    <p style={{
+                        paddingLeft: "5vw",
+                        paddingRight: "5vw"
+                    }}>
+                        Is there anything else about this medication you would like to know?
+                    </p>
                     <form className={"box-center"} onSubmit={handleSubmit}>
                         <textarea 
                         value={userInput}
                         onChange={e => setUserInput(e.target.value)}
-                        style={{width: "30vw", height: "15vh", paddingTop: "0vh",}}/>
-                        <button type="submit">Submit</button>
-                        {/* <input
-                        type="text"
-                        style={{width: "30vw", height: "15vh", paddingTop: "0vh",}}
-                        /> */}
+                        style={{
+                          width: "30vw",
+                          height: "10vh",
+                          paddingTop: "0vh",
+                          fontFamily: "serif",
+                          fontSize: "2vh",
+                          }}/>
+                        <button type="submit"
+                         style={{
+                            width: "10vw",
+                            height: "5vh",
+                            borderRadius: "30px",
+                            color: "white",
+                            borderColor: "white",
+                            borderStyle: "solid",
+                            backgroundColor: "transparent",
+                            }}>Submit</button>
                     </form>
                     </div>
                     }
