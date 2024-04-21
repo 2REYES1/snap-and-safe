@@ -48,10 +48,18 @@
     font-size: 30px;
     font-family: serif;
     font-optical-sizing: auto;
-    font-weight: 900;
+    /* font-weight: 900; */
     font-style: normal;
 }
 
+.prev-button:hover{
+    background: transparent;
+    color: #084D8D;
+    /* margin: 15px;    */
+    font-weight: 900;
+    border-radius: 20px;
+    border: 5px solid #084D8D;
+}
 
 .body-layout{
     display: flex;

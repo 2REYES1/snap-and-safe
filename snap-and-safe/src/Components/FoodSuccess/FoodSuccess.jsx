@@ -27,7 +27,7 @@ export default function FoodSuccess(props) {
         <div className={"main-layout"}>
             <div className={"header-layout"}>
                 <button className={"prev-button"} onClick={onClickPrev}>
-                    Prev
+                    back
                 </button>
             </div>
             <div className={"box-center"}>
